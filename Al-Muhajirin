@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masjid Al-Muhajirin</title>
+
+    <!-- TAILWIND CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS ANIMATION -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* glowing effect */
+        .glow {
+            transition: 0.3s;
+        }
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.7);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-gray-200">
+
+<!-- NAVBAR -->
+<nav class="bg-emerald-700 dark:bg-emerald-900 text-white shadow-lg sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-xl font-bold">Masjid Al-Muhajirin</h1>
+
+        <div class="space-x-6 hidden md:block">
+            <a href="#profil" class="hover:text-gray-300">Profil</a>
+            <a href="#jadwal" class="hover:text-gray-300">Jadwal</a>
+            <a href="#program" class="hover:text-gray-300">Program</a>
+            <a href="#phbi" class="hover:text-gray-300">PHBI</a>
+            <a href="#kontak" class="hover:text-gray-300">Kontak</a>
+        </div>
+
+        <!-- DARK MODE TOGGLE -->
+        <button id="darkToggle" class="bg-white text-black px-3 py-1 rounded-full shadow hover:scale-105 transition">
+            ☀
+        </button>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="relative h-[70vh] bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1585560051523-379f689a0052?auto=format&fit=crop&w=1200&q=60');">
+
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20"></div>
+
+    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6"
+        data-aos="zoom-in" data-aos-duration="1200">
+
+        <div>
+            <h1 class="text-5xl font-extrabold mb-3 drop-shadow-lg">Masjid Al-Muhajirin</h1>
+            <p class="text-lg drop-shadow">
+                Jl. Flamboyan Raya No.47 A, Mekar Jaya, Sukmajaya – Depok
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROFIL -->
+<section id="profil" class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-4" data-aos="fade-up">Profil Masjid</h2>
+
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 glow" data-aos="fade-up" data-aos-delay="200">
+        <p><strong>Nama Masjid:</strong> Masjid Al-Muhajirin</p>
+        <p><strong>Alamat:</strong> Jl. Flamboyan Raya No.47 A, RT.2/RW.3, Mekar Jaya, Sukmajaya, Kota Depok, Jawa Barat 16411</p>
+
+        <div class="mt-4 p-4 bg-emerald-100 dark:bg-emerald-900 border-l-4 border-emerald-600 rounded">
+            <p class="font-bold">Rekening Donasi:</p>
+            <p>BJB Syariah: <strong>5050201033640</strong> a.n. MASJID AL-MUHAJIRIN</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- JADWAL SHOLAT -->
+<section id="jadwal" class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-6" data-aos="fade-up">Jadwal Sholat</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <!-- Card -->
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow glow text-center" data-aos="fade-up" data-aos-delay="100">
+            <p class="font-bold">Subuh</p>04.30
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow glow text-center" data-aos="fade-up" data-aos-delay="150">
+            <p class="font-bold">Dzuhur</p>12.00
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow glow text-center" data-aos="fade-up" data-aos-delay="200">
+            <p class="font-bold">Ashar</p>15.15
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow glow text-center" data-aos="fade-up" data-aos-delay="250">
+            <p class="font-bold">Maghrib</p>17.50
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow glow text-center" data-aos="fade-up" data-aos-delay="300">
+            <p class="font-bold">Isya</p>19.00
+        </div>
+    </div>
+</section>
+
+
+<!-- PROGRAM -->
+<section id="program" class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-4" data-aos="fade-up">Program Kegiatan</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow glow" data-aos="fade-right">
+            <h3 class="text-xl font-bold mb-2">Pengajian Anak-anak</h3>
+            <ul class="list-disc ml-6">
+                <li>Senin, Rabu, Jumat: Ba'da Maghrib – Isya</li>
+                <li>Selasa – Kamis: 16.00 – 17.30</li>
+            </ul>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow glow" data-aos="fade-left">
+            <h3 class="text-xl font-bold mb-2">Kajian & Kegiatan Rutin</h3>
+            <ul class="list-disc ml-6">
+                <li>Kajian Ahad Subuh</li>
+                <li>Yasinan tiap Malam Jumat</li>
+                <li>Pengajian Ibu-ibu tiap Ahad siang</li>
+                <li>Kajian Remaja Masjid (Ahad pekan ganjil)</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PHBI -->
+<section id="phbi" class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-4" data-aos="fade-up">
+        PHBI – Peringatan Hari Besar Islam
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">Idul Fitri</div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">Idul Adha</div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">1 Muharram</div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">Maulid Nabi</div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">Isra Mi’raj</div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow glow" data-aos="zoom-in">Nuzulul Qur’an</div>
+    </div>
+</section>
+
+
+<!-- KONTAK -->
+<section id="kontak" class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-4" data-aos="fade-up">Kontak</h2>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow glow" data-aos="fade-up" data-aos-delay="150">
+        <p><strong>Telepon/WA:</strong> 0812-8609-5531</p>
+        <p><strong>Email:</strong> almuhajirin@gmail.com</p>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-emerald-700 dark:bg-emerald-900 text-white text-center py-4 mt-10">
+    © 2025 Masjid Al-Muhajirin – Depok
+</footer>
+
+<!-- AOS INIT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- DARK MODE SCRIPT -->
+<script>
+    const html = document.documentElement;
+    const toggle = document.getElementById("darkToggle");
+
+    toggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        toggle.textContent = html.classList.contains("dark") ? "🌙" : "☀";
+    });
+</script>
+
+</body>
+</html>
