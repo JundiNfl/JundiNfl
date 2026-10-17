@@ -1,1 +1,405 @@
-j
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV | Jundi Naufal Izzati</title>
+<meta name="description" content="CV Jundi Naufal Izzati, mahasiswa Teknik Informatika Universitas Indraprasta PGRI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F8F5;
+    --surface: #FFFFFF;
+    --ink: #10231F;
+    --muted: #4F6560;
+    --line: #D6E0DB;
+    --green: #0F5C50;
+    --green-soft: #DCEEE8;
+    --gold: #F2B632;
+    --gold-ink: #10231F;
+    --radius: 18px;
+  }
+  [data-theme="dark"] {
+    --bg: #0B1714;
+    --surface: #12241F;
+    --ink: #E9F2EF;
+    --muted: #9DB5AE;
+    --line: #234038;
+    --green: #5FD0B8;
+    --green-soft: #17342D;
+    --gold: #F2B632;
+    --gold-ink: #10231F;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    font-family: 'Figtree', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 1.05rem;
+    transition: background .3s, color .3s;
+  }
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; line-height: 1.08; letter-spacing: -0.02em; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+
+  /* ---------- Navbar ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+  .logo {
+    font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.15rem;
+    text-decoration: none; display: flex; align-items: center; gap: 10px;
+  }
+  .logo i {
+    font-style: normal; width: 34px; height: 34px; border-radius: 50% 50% 8px 8px;
+    background: var(--gold); color: var(--gold-ink); display: grid; place-items: center; font-size: .95rem;
+  }
+  .nav ul { display: flex; gap: 4px; list-style: none; }
+  .nav ul a {
+    text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 500; font-size: .96rem;
+    color: var(--muted); transition: background .2s, color .2s;
+  }
+  .nav ul a:hover { color: var(--ink); background: var(--green-soft); }
+  .nav ul a.active { color: var(--ink); background: var(--green-soft); }
+  .theme-btn {
+    width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink); cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .theme-btn:hover { border-color: var(--green); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 96px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 800; }
+  .hero .role {
+    margin-top: 22px; font-size: 1.2rem; color: var(--muted); max-width: 30em;
+  }
+  .hero .role b { color: var(--ink); font-weight: 600; }
+  .focus { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .focus span {
+    padding: 8px 16px; border-radius: 999px; background: var(--green-soft); color: var(--green);
+    font-weight: 600; font-size: .95rem;
+  }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px;
+    font-weight: 600; text-decoration: none; border: 2px solid transparent; font-size: 1rem;
+    transition: transform .2s, background .2s, border-color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--gold); color: var(--gold-ink); }
+  .btn.ghost { border-color: var(--line); background: var(--surface); }
+  .btn.ghost:hover { border-color: var(--green); }
+
+  .portrait { position: relative; justify-self: center; width: min(360px, 100%); aspect-ratio: 4 / 5; }
+  .portrait::before {
+    content: ""; position: absolute; inset: 0; transform: translate(18px, 18px);
+    border: 3px solid var(--gold); border-radius: 999px 999px 28px 28px;
+  }
+  .portrait .frame {
+    position: relative; width: 100%; height: 100%; overflow: hidden;
+    border-radius: 999px 999px 28px 28px; background: var(--green);
+    display: grid; place-items: center;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+  .portrait .initials {
+    font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 6rem; color: var(--gold);
+  }
+
+  /* Satu momen animasi: hero muncul saat halaman dibuka */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-in { opacity: 0; transform: translateY(18px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .hero-in:nth-child(2) { animation-delay: .12s; }
+    .hero-in:nth-child(3) { animation-delay: .24s; }
+    .hero-in:nth-child(4) { animation-delay: .36s; }
+    .portrait { opacity: 0; animation: rise .9s .2s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+
+  /* ---------- Sections ---------- */
+  section.block { padding: 84px 0; border-top: 1px solid var(--line); }
+  section.block .wrap { display: grid; grid-template-columns: 260px 1fr; gap: 48px; }
+  section.block h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 700; position: sticky; top: 100px; align-self: start; }
+
+  .about p { font-size: 1.25rem; line-height: 1.7; max-width: 36em; }
+  .edu { margin-top: 36px; display: grid; gap: 14px; }
+  .edu-item {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;
+  }
+  .edu-item strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; display: block; }
+  .edu-item span { color: var(--muted); }
+  .edu-item time { font-weight: 600; color: var(--green); }
+
+  .skill-group + .skill-group { margin-top: 30px; }
+  .skill-group h3 { font-size: 1.15rem; margin-bottom: 14px; color: var(--muted); font-weight: 600; font-family: 'Figtree', sans-serif; letter-spacing: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip {
+    padding: 14px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    font-weight: 600; transition: border-color .2s, transform .2s;
+  }
+  .chip:hover { border-color: var(--green); transform: translateY(-2px); }
+
+  /* Linimasa pengalaman (urutan waktu yang nyata) */
+  .timeline { list-style: none; position: relative; padding-left: 34px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .timeline li { position: relative; padding-bottom: 34px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -34px; top: 6px; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--green);
+  }
+  .timeline li.now::before { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 30%, transparent); }
+  .timeline time { font-weight: 600; color: var(--green); font-size: .95rem; }
+  .timeline h3 { font-size: 1.4rem; margin: 2px 0 2px; font-weight: 700; }
+  .timeline p { color: var(--muted); }
+
+  /* Project */
+  .project {
+    display: grid; grid-template-columns: 1fr 1fr; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
+  }
+  .project .shot { background: var(--green); padding: 36px 32px; display: grid; place-items: center; }
+  .browser { width: 100%; background: var(--bg); border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+  .browser .bar { display: flex; gap: 6px; padding: 10px 12px; background: var(--green-soft); }
+  .browser .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); opacity: .5; }
+  .browser .body { padding: 18px; display: grid; gap: 10px; }
+  .browser .body div { height: 10px; border-radius: 6px; background: var(--line); }
+  .browser .body .h { height: 22px; width: 62%; background: var(--green); }
+  .browser .body .g { height: 56px; background: var(--gold); width: 100%; }
+  .browser .body .s { width: 80%; }
+  .project .info { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; gap: 14px; align-items: flex-start; }
+  .project h3 { font-size: 1.7rem; }
+  .project p { color: var(--muted); }
+
+  /* Kontak */
+  .contact { padding: 84px 0 56px; }
+  .contact-card {
+    background: var(--green); color: #fff; border-radius: 28px; padding: clamp(32px, 6vw, 64px);
+  }
+  [data-theme="dark"] .contact-card { background: var(--green-soft); color: var(--ink); }
+  .contact-card h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; max-width: 12em; }
+  .contact-card p { margin-top: 14px; opacity: .85; max-width: 32em; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .links a {
+    padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600;
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); transition: background .2s, transform .2s;
+  }
+  [data-theme="dark"] .links a { background: var(--surface); border-color: var(--line); }
+  .links a:hover { background: var(--gold); color: var(--gold-ink); border-color: var(--gold); transform: translateY(-2px); }
+  footer { text-align: center; color: var(--muted); font-size: .92rem; padding: 12px 0 40px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .hero { padding: 40px 0 64px; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
+    .portrait { order: -1; width: min(260px, 70%); }
+    section.block .wrap { grid-template-columns: 1fr; gap: 24px; }
+    section.block h2 { position: static; }
+    section.block { padding: 60px 0; }
+    .project { grid-template-columns: 1fr; }
+    .nav ul a { padding: 8px 10px; font-size: .9rem; }
+    .logo span { display: none; }
+  }
+  @media (max-width: 480px) {
+    .nav ul a { padding: 6px 8px; font-size: .84rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Beranda"><i>J</i><span>Jundi Naufal</span></a>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Skill</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#projects">Project</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">🌙</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1 class="hero-in">Jundi Naufal Izzati</h1>
+        <p class="role hero-in"><b>Mahasiswa Teknik Informatika</b> Universitas Indraprasta PGRI. Teliti, komunikatif, dan terbiasa bekerja dengan tanggung jawab tinggi.</p>
+        <div class="focus hero-in" aria-label="Bidang pengalaman">
+          <span>Pelayanan</span><span>Event</span><span>Pendidikan</span>
+        </div>
+        <div class="cta hero-in">
+          <a class="btn primary" href="https://wa.me/62895392072780">Hubungi lewat WhatsApp</a>
+          <a class="btn ghost" href="#projects">Lihat project</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="frame">
+          <span class="initials" aria-hidden="true">JN</span>
+          <img src="IMG-20230924-WA0028.jpg" alt="Foto Jundi Naufal Izzati" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section class="block about" id="about">
+    <div class="wrap">
+      <h2>Tentang saya</h2>
+      <div>
+        <p>Saya mahasiswa Teknik Informatika yang punya pengalaman di bidang pelayanan, event, dan pendidikan. Saya terbiasa bekerja secara individu maupun tim, teliti, dan menjaga komunikasi tetap jelas.</p>
+        <div class="edu">
+          <div class="edu-item">
+            <div><strong>Universitas Indraprasta PGRI</strong><span>Teknik Informatika</span></div>
+            <time>2024 – Sekarang</time>
+          </div>
+          <div class="edu-item">
+            <div><strong>MAN 1 Bogor</strong><span>Ilmu Pengetahuan Alam</span></div>
+            <time>2021 – 2024</time>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL -->
+  <section class="block" id="skills">
+    <div class="wrap">
+      <h2>Keahlian</h2>
+      <div>
+        <div class="skill-group">
+          <h3>Aplikasi</h3>
+          <div class="chips">
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">Canva</span>
+            <span class="chip">CapCut</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cara bekerja</h3>
+          <div class="chips">
+            <span class="chip">Manajemen waktu</span>
+            <span class="chip">Leadership</span>
+            <span class="chip">Teamwork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENGALAMAN -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <h2>Pengalaman kerja</h2>
+      <ol class="timeline">
+        <li class="now">
+          <time>2025 – Sekarang</time>
+          <h3>Driver Shopee Food</h3>
+          <p>Freelance</p>
+        </li>
+        <li>
+          <time>2024 – 2025</time>
+          <h3>Waiter</h3>
+          <p>Angke Restaurant</p>
+        </li>
+        <li>
+          <time>2024 – 2025</time>
+          <h3>Guru Ngaji</h3>
+          <p>Masjid Al Muhajirin</p>
+        </li>
+        <li>
+          <time>2024 – 2025</time>
+          <h3>Daily Workee</h3>
+          <p>Event & Wedding Organizer</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <h2>Project website</h2>
+      <article class="project">
+        <div class="shot" aria-hidden="true">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body"><div class="h"></div><div class="g"></div><div class="s"></div><div></div><div class="s"></div></div>
+          </div>
+        </div>
+        <div class="info">
+          <h3>Website Project</h3>
+          <p>Salah satu project desain dan pengembangan website yang pernah saya kerjakan. Buka untuk melihat hasilnya langsung.</p>
+          <a class="btn primary" href="https://couch-elf-99142393.figma.site/" target="_blank" rel="noopener">Buka project ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <h2>Mari ngobrol soal kerja sama.</h2>
+        <p>Pilih cara yang paling nyaman untuk menghubungi saya.</p>
+        <div class="links">
+          <a href="https://wa.me/62895392072780">WhatsApp</a>
+          <a href="tel:+62895392072780">Telepon</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jundinaufalizzati@gmail.com">Gmail</a>
+          <a href="https://github.com/JundiNfl" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/jundi-naufal-izzati/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 | Jundi Naufal Izzati</footer>
+
+<script>
+  // Tema terang/gelap
+  const root = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    try { localStorage.setItem('theme', t); } catch (e) {}
+  }
+  setTheme(saved || (prefersDark ? 'dark' : 'light'));
+  btn.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+  // Tandai menu sesuai bagian yang sedang dilihat
+  const links = document.querySelectorAll('.nav ul a');
+  const map = new Map();
+  links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) map.set(s, a); });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        map.get(e.target).classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  map.forEach((_, s) => io.observe(s));
+</script>
+</body>
+</html>
